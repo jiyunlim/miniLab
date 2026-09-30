@@ -1,0 +1,350 @@
+.component-guide {
+  --guide-primary: var(--accent);
+  --guide-secondary: var(--accent-dark);
+  --guide-success: #27ae60;
+  --guide-warning: #f39c12;
+  --guide-danger: #e74c3c;
+  --guide-code: var(--accent);
+
+  .guide-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .guide-card {
+    min-width: 0;
+    padding: clamp(22px, 2.5vw, 34px);
+    background:
+      linear-gradient(135deg, var(--accent-bg), transparent 150px), var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .guide-card-title {
+    margin: 0 0 4px;
+    color: var(--accent);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  .guide-text {
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.6;
+    word-break: keep-all;
+  }
+
+  .guide-code-token {
+    display: inline;
+    padding: 0;
+    color: var(--guide-code);
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 800;
+  }
+
+  .guide-sample {
+    display: flex;
+    min-height: 90px;
+    align-items: center;
+    justify-content: space-around;
+    gap: 18px;
+    margin: 16px 0;
+    padding: 12px;
+    background: color-mix(in srgb, var(--social-bg) 65%, var(--bg));
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .btn {
+    appearance: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #fff;
+    font-family: inherit;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition:
+      transform 150ms ease,
+      filter 150ms ease;
+
+    &:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--accent-border);
+      outline-offset: 3px;
+    }
+  }
+
+  .btn-sm {
+    min-width: 72px;
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .btn-md {
+    min-width: 96px;
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  .btn-lg {
+    min-width: 150px;
+    padding: 18px 24px;
+    font-size: 16px;
+  }
+
+  .btn-primary {
+    background: var(--guide-primary);
+  }
+
+  .btn-secondary {
+    background: var(--guide-secondary);
+  }
+
+  .btn-outline {
+    color: var(--accent);
+    background: var(--bg);
+    border-color: var(--accent-border);
+  }
+
+  .guide-label-sample {
+    flex-wrap: wrap;
+  }
+
+  .label-txt {
+    display: inline-flex;
+    padding: 7px 11px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .is-default {
+    color: var(--accent);
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-border);
+  }
+
+  .is-primary {
+    background: var(--guide-primary);
+  }
+
+  .is-success {
+    background: var(--guide-success);
+  }
+
+  .is-warning {
+    background: var(--guide-warning);
+  }
+
+  .is-danger {
+    background: var(--guide-danger);
+  }
+
+  .ico {
+    display: inline-block;
+    color: var(--accent);
+    background-color: currentColor;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+
+  .ic-info {
+    -webkit-mask-image: url("../assets/img/svg/ic-info.svg");
+    mask-image: url("../assets/img/svg/ic-info.svg");
+  }
+
+  .ic-x {
+    -webkit-mask-image: url("../assets/img/svg/ic-x.svg");
+    mask-image: url("../assets/img/svg/ic-x.svg");
+  }
+
+  .ic-search {
+    -webkit-mask-image: url("../assets/img/svg/ic-search.svg");
+    mask-image: url("../assets/img/svg/ic-search.svg");
+  }
+
+  .ic-setting {
+    -webkit-mask-image: url("../assets/img/svg/ic-setting.svg");
+    mask-image: url("../assets/img/svg/ic-setting.svg");
+  }
+
+  .ic-s-sm {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ic-s-md {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ic-s-lg {
+    width: 46px;
+    height: 46px;
+  }
+
+  .guide-list {
+    margin: 0 0 20px;
+    padding: 18px 20px;
+    color: var(--text-h);
+    background: color-mix(in srgb, var(--accent-bg) 65%, var(--bg));
+    border: 1px solid color-mix(in srgb, var(--accent-border) 45%, transparent);
+    border-radius: 12px;
+    list-style: none;
+
+    li {
+      font-size: 13px;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+  }
+
+  .guide-example {
+    color: var(--text-h);
+    font-size: 13px;
+
+    > strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    pre {
+      overflow-x: auto;
+      margin: 0;
+      padding: 14px 16px;
+      background: var(--code-bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    code {
+      display: block;
+      padding: 0;
+      color: var(--text-h);
+      background: transparent;
+      font-family: var(--mono);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+  }
+
+  .guide-input-sample {
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .input-form {
+    position: relative;
+  }
+
+  .input-s-sm {
+    height: 28px;
+    width: 150px;
+  }
+
+  .input-s-md {
+    height: 32px;
+    width: 180px;
+  }
+
+  .input-s-lg {
+    height: 38px;
+    width: 215px;
+  }
+
+  .input-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .input-field {
+    width: 100%;
+    min-height: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: var(--text-h);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 12px;
+
+    &::placeholder {
+      color: #9ca8ad;
+    }
+
+    &:focus {
+      border-color: var(--accent);
+      outline: 3px solid var(--accent-bg);
+    }
+  }
+}
+
+@media (max-width: 1180px) {
+  .component-guide .guide-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .component-guide {
+    .guide-card {
+      padding: 20px 16px;
+    }
+
+    .guide-card-title {
+      font-size: 22px;
+    }
+
+    .guide-sample {
+      min-height: auto;
+      padding: 20px 0;
+    }
+
+    .guide-button-sample,
+    .guide-input-sample {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .guide-input-sample li,
+    .input-form {
+      width: 100%;
+    }
+
+    .guide-list {
+      padding: 16px;
+    }
+  }
+}

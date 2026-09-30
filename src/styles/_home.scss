@@ -1,0 +1,183 @@
+h1 {
+  &.lab-title {
+    width: 100%;
+    font-size: 36px;
+    margin: 0;
+    margin-bottom: 26px;
+    line-height: normal;
+    color: var(--accent);
+  }
+}
+
+.lab-intro {
+  position: relative;
+  display: block;
+  padding: 30px;
+  font-size: 18px;
+  color: var(--text-c);
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255, 255, 255, 0.2),
+      transparent 32%
+    ),
+    linear-gradient(135deg, var(--accent-dark), #7d22b8 68%, var(--accent));
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  &::after {
+    content: "</>";
+    position: absolute;
+    right: clamp(20px, 3vw, 40px);
+    bottom: -10px;
+    color: rgba(255, 255, 255, 0.08);
+    font-family: var(--mono);
+    font-size: clamp(64px, 8vw, 110px);
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .lab-intro-desc {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 1.2;
+    color: var(--social-bg);
+  }
+}
+
+.lab-layout {
+  padding: 26px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  .skills,
+  .career {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 24px;
+  }
+}
+
+.skills-title {
+  margin: 0 0 16px;
+  color: var(--text-h);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.card-ui {
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  flex: 1 1 0;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 22px;
+    background: linear-gradient(90deg, var(--accent-bg), transparent 72%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  &-icon {
+    display: grid;
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 10px;
+    background: var(--accent-bg);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  &-title {
+    color: var(--text-h);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &-content {
+    padding: 22px;
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 14px 0 32px;
+      box-sizing: border-box;
+      color: var(--text-h);
+      background: color-mix(in srgb, var(--accent-bg) 60%, var(--bg));
+      border: 1px solid transparent;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      transition:
+        border-color 180ms ease,
+        transform 180ms ease;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 14px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px var(--accent-bg);
+      }
+
+      &:hover {
+        border-color: var(--accent-border);
+        transform: translateY(-2px);
+      }
+
+      &.career-item {
+        padding: 14px;
+        &::before {
+          content: none;
+        }
+
+        .career-company {
+          margin: 8px 0px;
+          color: var(--accent);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .skills-title {
+    font-size: 20px;
+  }
+
+  .card-ui {
+    &-header,
+    &-content {
+      padding: 16px;
+    }
+
+    &-content li {
+      padding-right: 10px;
+      font-size: 12px;
+    }
+  }
+}
